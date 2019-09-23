@@ -1,0 +1,14 @@
+---
+# defaults file for n3dr
+n3dr_ver: '3.3.2'
+n3dr_mirror: https://github.com/030/n3dr/releases/download
+n3dr_os: linux
+n3dr_install_dir: /usr/local/bin
+n3dr_checksums:
+  '3.3.2':
+      # https://github.com/030/n3dr/releases/download/3.3.2/n3dr-linux.sha512.txt
+      linux: sha512:a77f8e0900c755bd8ba56f05b6d6a6d7bd21b108c193ecb8d00a866b12ae03b1fd78d9855548f677525d7513b3bf67cc20373817057047671914b4845a6cfc09
+      # https://github.com/030/n3dr/releases/download/3.3.2/n3dr-osx.sha512.txt
+      osx: sha512:41d5d716bcd76666c9b3e34f45f200e721cf0daec382133edcaee4d6c5a3c94a34e6e7f6e739e92e86aecfdae731cd2bb2de89411a2a3c40388e1c9c416fa66e
+      # https://github.com/030/n3dr/releases/download/3.3.2/n3dr-windows.sha512.txt
+      windows: sha512:f4629b6865fa436e41995778574a4663174bb76d6858c23708f9a31e45c4ba9cf9856d2e88ca1777368d270e143bd5f19f2e47e38433d486ef2d14b03e556ab1
