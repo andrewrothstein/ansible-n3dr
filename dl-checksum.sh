@@ -1,19 +1,23 @@
 #!/usr/bin/env sh
-VER=${1:-3.3.2}
 DIR=~/Downloads
-MIRROR=https://github.com/030/n3dr/releases/download/${VER}
+MIRROR=https://github.com/030/n3dr/releases/download
 
 dl()
 {
-    local os=$1
-    local url=$MIRROR/n3dr-${os}.sha512.txt
+    local ver=$1
+    local os=$2
+    local url=$MIRROR/$ver/n3dr-${os}.sha512.txt
 
     printf "      # %s\n" $url
     printf "      %s: sha512:%s\n" $os $(curl -sSL $url | awk '{print $1}')
 }
 
-printf "  '%s':\n" $VER
-dl linux
-dl osx
-dl windows
+dl_ver() {
+    local ver=$1
+    printf "  '%s':\n" $ver
+    dl $ver linux
+    dl $ver osx
+    dl $ver windows
+}
 
+dl_ver ${1:-3.3.3}
