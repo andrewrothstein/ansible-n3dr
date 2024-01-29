@@ -1,4 +1,12 @@
 ---
 - hosts: all
   roles:
-  - role: '{{ playbook_dir }}'
+    - role: '{{ playbook_dir }}'
+  tasks:
+    - name: Executing 'n3dr --version'
+      ansible.builtin.command: /usr/local/bin/n3dr --version
+      changed_when: false
+      register: n3dr_test_output
+    - name: Output from 'n3dr --version'
+      ansible.builtin.debug:
+        msg: '{{ n3dr_test_output.stdout }}'

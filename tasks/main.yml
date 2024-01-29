@@ -1,6 +1,6 @@
 ---
-- name: resolve platform specific vars
-  include_vars: '{{ item }}'
+- name: Resolve platform specific vars
+  ansible.builtin.include_vars: '{{ item }}'
   with_first_found:
     - files:
         - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
@@ -9,18 +9,18 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: download...
-  become: yes
+- name: Downloading {{ n3dr_url }}
+  become: true
   become_user: root
-  get_url:
+  ansible.builtin.get_url:
     url: '{{ n3dr_url }}'
     dest: '{{ n3dr_exe }}'
-    mode: 0755
+    mode: '755'
     checksum: '{{ n3dr_checksum }}'
-- name: link...
-  become: yes
+- name: Linking
+  become: true
   become_user: root
-  file:
+  ansible.builtin.file:
     src: '{{ n3dr_exe }}'
     dest: '{{ n3dr_link }}'
     state: link

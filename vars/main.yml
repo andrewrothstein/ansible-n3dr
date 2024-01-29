@@ -3,5 +3,5 @@
 n3dr_exe: '{{ n3dr_install_dir }}/n3dr-{{ n3dr_ver }}'
 n3dr_link: '{{ n3dr_install_dir }}/n3dr'
 
-n3dr_url: '{{ n3dr_mirror }}/{{ n3dr_ver }}/n3dr-{{ n3dr_os }}'
+n3dr_url: '{{ n3dr_mirror }}/{{ n3dr_ver }}/n3dr-{{ n3dr_os }}-latest'
 n3dr_checksum: '{{ n3dr_checksums[n3dr_ver][n3dr_os] }}'
